@@ -1,14 +1,15 @@
-from models import add_book, view_books, update_book, delete_book, search_book
+from models import (
+    add_book,
+    view_books,
+    search_book,
+    update_book,
+    delete_book,
+    export_books_to_csv
+)
+from utils import display_menu
 
 while True:
-    print("\n Bookstore Menu")
-    print("1. Add Book")
-    print("2. View Books")
-    print("3. Search Book")
-    print("4. Update Book")
-    print("5. Delete Book")
-    print("6. Exit")
-
+    display_menu()
     choice = input("Choose an option: ")
 
     if choice == '1':
@@ -22,7 +23,11 @@ while True:
     elif choice == '5':
         delete_book()
     elif choice == '6':
+        export_books_to_csv()
+    elif choice == '7':
         print("Goodbye!")
         break
     else:
         print("Invalid choice, try again.")
+
+
